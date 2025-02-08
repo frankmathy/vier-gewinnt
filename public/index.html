@@ -2,15 +2,40 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vier Gewinnt</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <h1>Vier Gewinnt</h1>
-    <input type="text" id="playerName" placeholder="Dein Name" />
-    <button id="startGame">Spiel starten</button>
-    <div id="board"></div>
+    <div id="game-container">
+      <div id="player-form">
+        <h2>Willkommen zu Vier Gewinnt</h2>
+        <div class="form-group">
+          <label for="player-name">Dein Name:</label>
+          <input type="text" id="player-name" required />
+          <button id="start-game">Spiel starten</button>
+        </div>
+      </div>
+
+      <div id="game-board" style="display: none">
+        <div class="board"></div>
+      </div>
+
+      <div id="highscores" style="display: none">
+        <h2>Highscores</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Spieler</th>
+              <th>Züge</th>
+            </tr>
+          </thead>
+          <tbody id="highscores-body"></tbody>
+        </table>
+        <button id="play-again">Nochmal spielen</button>
+      </div>
+    </div>
   </body>
+  <script src="game.js"></script>
 </html>
